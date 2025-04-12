@@ -1,0 +1,49 @@
+# Cursor Rules for XooStation
+
+# Language and Framework Preferences
+prefer-language: JavaScript
+prefer-framework: React
+prefer-css: Vanilla CSS
+
+# Library Preferences
+prefer-drag-and-drop: react-dnd
+prefer-video-playback: video.js
+prefer-api-client: axios
+prefer-midi: midi
+prefer-qr-code: qrcode
+prefer-storage: electron-store
+prefer-keyboard-shortcuts: electron-global-shortcut
+
+# Coding Style
+use-functional-components: true
+use-hooks: true
+avoid-class-components: true
+use-es6: true
+prefer-arrow-functions: true
+
+# Project-Specific Rules
+# Always use Vanilla CSS for styling
+when-styling: use Vanilla CSS
+avoid: inline CSS, styled-components, emotion
+
+# Prefer local state management
+when-managing-state: use useState, useReducer
+avoid: redux, mobx
+
+# For API calls, cache results locally
+when-making-api-calls: cache results locally using the file system
+
+# For video output, prioritize Syphon for Mac and Spout for Windows
+when-handling-video-output: use Syphon for Mac, Spout for Windows
+
+# Always include error handling for API calls
+when-making-api-calls: include error handling with user-friendly messages
+
+# Preview Grid should be 3x3
+when-creating-preview-grid: use a 3x3 grid layout
+
+# Controller Grid styling
+when-styling-controller-grid: assigned pads have a thumbnail with a subtle box shadow, unassigned pads are gray with no shadow
+
+# Fader behavior
+when-implementing-fader: update percentage overlay in real-time based on slider position

@@ -1,0 +1,350 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #101010;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Left side: Search and results */
+.search-container {
+  width: 40%;
+  background-color: #161616;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #363636;
+}
+
+.search-header {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: #0f0f0f;
+}
+
+.menu-button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.menu-icon {
+  width: 25px;
+  height: 3px;
+  background-color: #ffffff;
+  position: relative;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  background-color: #ffffff;
+  left: 0;
+}
+
+.menu-icon::before {
+  top: -8px;
+}
+
+.menu-icon::after {
+  bottom: -8px;
+}
+
+.search-bar {
+  flex: 1;
+  margin-left: 15px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  background-color: #262626;
+  border: none;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.recent-searches {
+  padding: 10px 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  background-color: #131313;
+}
+
+.recent-label {
+  color: #707070;
+  margin-right: 5px;
+}
+
+.recent-tag {
+  background-color: #292929;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.recent-tag:hover {
+  background-color: #363636;
+}
+
+.source-tabs {
+  display: flex;
+  border-bottom: 1px solid #363636;
+}
+
+.tab {
+  flex: 1;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+}
+
+.tab.active {
+  border-bottom-color: #427de4;
+}
+
+.search-results {
+  flex: 1;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 10px;
+}
+
+.result-item {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background-color: #212121;
+  cursor: grab;
+  overflow: hidden;
+}
+
+.result-item img,
+.result-item video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Right side: Video players and MIDI pads */
+.controller-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #131313;
+}
+
+.video-players {
+  display: flex;
+  height: 30%;
+  gap: 10px;
+  padding: 10px;
+}
+
+.video-player {
+  flex: 1;
+  position: relative;
+  border: 2px solid #363636;
+  overflow: hidden;
+}
+
+#player-a {
+  border-color: #00ccff;
+}
+
+#player-b {
+  border-color: #fc4c6a;
+}
+
+.video-player video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.player-label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.player-percentage {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.midi-pads-container {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.midi-pads {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  gap: 5px;
+  height: 100%;
+}
+
+.midi-pad {
+  background-color: #262626;
+  border: 1px solid #363636;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.midi-pad.player-a {
+  border-color: #00ccff;
+}
+
+.midi-pad.player-b {
+  border-color: #fc4c6a;
+}
+
+.midi-pad img,
+.midi-pad video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.midi-pad.active {
+  border-width: 3px;
+}
+
+.crossfader-container {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: #0f0f0f;
+  border-top: 1px solid #363636;
+}
+
+.crossfader-label {
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+.crossfader {
+  flex: 1;
+  height: 30px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: linear-gradient(to right, #00ccff, #fc4c6a);
+  outline: none;
+  border-radius: 15px;
+}
+
+.crossfader::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  background: #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.crossfader-status {
+  width: 60px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #36c17b;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: #262626;
+  padding: 20px;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 500px;
+}
+
+.modal h2 {
+  margin-bottom: 20px;
+}
+
+.midi-device-section {
+  margin-bottom: 15px;
+}
+
+.midi-device-section h3 {
+  margin-bottom: 10px;
+  color: #8e8e8e;
+}
+
+.midi-device-section select {
+  width: 100%;
+  padding: 10px;
+  background-color: #363636;
+  color: #ffffff;
+  border: none;
+}
+
+#midi-connect-btn {
+  padding: 10px 20px;
+  background-color: #427de4;
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#midi-connect-btn:hover {
+  background-color: #3569c7;
+}
+
+/* Drag and drop styles */
+.dragging {
+  opacity: 0.5;
+}
+
+.drag-over {
+  border: 2px dashed #ffffff;
+}

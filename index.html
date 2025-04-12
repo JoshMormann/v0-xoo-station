@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>VJ MIDI Controller</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Left side: Search and results -->
+    <div class="search-container">
+      <div class="search-header">
+        <div class="menu-button">
+          <div class="menu-icon"></div>
+        </div>
+        <div class="search-bar">
+          <input type="text" id="search-input" placeholder="Search videos, GIFs...">
+        </div>
+      </div>
+      
+      <div class="recent-searches" id="recent-searches">
+        <span class="recent-label">Recent Searches:</span>
+        <!-- Recent searches will be populated here -->
+      </div>
+      
+      <div class="source-tabs">
+        <div class="tab active" data-source="youtube">YouTube</div>
+        <div class="tab" data-source="vimeo">Vimeo</div>
+        <div class="tab" data-source="giphy">GIPHY</div>
+      </div>
+      
+      <div class="search-results" id="search-results">
+        <!-- Search results will be populated here -->
+      </div>
+    </div>
+    
+    <!-- Right side: Video players and MIDI pads -->
+    <div class="controller-container">
+      <div class="video-players">
+        <div class="video-player" id="player-a">
+          <video id="video-a" autoplay loop muted></video>
+          <div class="player-label">A</div>
+          <div class="player-percentage">0%</div>
+        </div>
+        <div class="video-player" id="player-b">
+          <video id="video-b" autoplay loop muted></video>
+          <div class="player-label">B</div>
+          <div class="player-percentage">100%</div>
+        </div>
+      </div>
+      
+      <div class="midi-pads-container">
+        <div class="midi-pads" id="midi-pads">
+          <!-- MIDI pads will be generated here -->
+        </div>
+      </div>
+      
+      <div class="crossfader-container">
+        <div class="crossfader-label">A</div>
+        <input type="range" min="0" max="100" value="100" class="crossfader" id="crossfader">
+        <div class="crossfader-label">B</div>
+        <div class="crossfader-status" id="crossfader-status">ON</div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- MIDI device selection modal -->
+  <div class="modal" id="midi-modal">
+    <div class="modal-content">
+      <h2>Select MIDI Device</h2>
+      <div class="midi-device-section">
+        <h3>Input Devices</h3>
+        <select id="midi-input-select">
+          <option value="">Select MIDI Input...</option>
+        </select>
+      </div>
+      <div class="midi-device-section">
+        <h3>Output Devices</h3>
+        <select id="midi-output-select">
+          <option value="">Select MIDI Output...</option>
+        </select>
+      </div>
+      <button id="midi-connect-btn">Connect</button>
+    </div>
+  </div>
+  
+  <script src="renderer.js"></script>
+</body>
+</html>
