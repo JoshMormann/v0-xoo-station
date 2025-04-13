@@ -1,0 +1,26 @@
+@import '../variables';
+
+.fader {
+  width: 100%;
+  height: 40px;
+  background-color: $gray-light;
+  border-radius: $border-radius-sm;
+  position: relative;
+  margin: $spacing-md 0;
+
+  &__handle {
+    width: 20px;
+    height: 100%;
+    background-color: $accent-green;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: $border-radius-sm;
+    cursor: pointer;
+    transition: background-color $transition-fast;
+
+    &:hover {
+      background-color: darken($accent-green, 10%);
+    }
+  }
+} 

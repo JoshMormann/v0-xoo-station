@@ -1,0 +1,16 @@
+@import '../variables';
+
+.search {
+  &-container {
+    margin-bottom: $spacing-md;
+  }
+
+  &-input {
+    width: 100%;
+    padding: $spacing-sm;
+    border-radius: $border-radius-sm;
+    border: 1px solid $gray-light;
+    background-color: $secondary-bg;
+    color: $text-primary;
+  }
+} 

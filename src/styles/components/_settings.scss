@@ -1,0 +1,30 @@
+@import '../variables';
+
+.settings {
+  &-container {
+    padding: $spacing-md;
+    background-color: $gray-dark;
+    border-radius: $border-radius-sm;
+    margin-top: $spacing-md;
+  }
+
+  &-section {
+    margin-bottom: $spacing-md;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &-title {
+    font-size: 1rem;
+    margin-bottom: $spacing-sm;
+  }
+
+  &-option {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-sm;
+  }
+} 

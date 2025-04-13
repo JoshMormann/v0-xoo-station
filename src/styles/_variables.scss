@@ -1,0 +1,42 @@
+// Colors
+$primary-bg: #000000;
+$secondary-bg: #1a1a1a;
+$accent-green: #00ff00;
+$accent-red: #ff0000;
+$text-primary: #ffffff;
+$text-secondary: #cccccc;
+$gray-light: #333333;
+$gray-dark: #222222;
+
+// Spacing
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+
+// Border Radius
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+
+// Shadows
+$shadow-subtle: 0 2px 4px rgba(0, 0, 0, 0.2);
+$shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+// Transitions
+$transition-fast: 0.2s;
+$transition-normal: 0.3s;
+$transition-slow: 0.5s;
+
+// Grid
+$grid-gap: $spacing-md;
+$preview-grid-cols: 3;
+$preview-grid-rows: 3;
+$controller-grid-cols: 8;
+$controller-grid-rows: 8;
+
+// Z-index layers
+$z-index-base: 1;
+$z-index-overlay: 10;
+$z-index-modal: 100; 

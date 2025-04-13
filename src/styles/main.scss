@@ -1,0 +1,11 @@
+@use 'variables' as *;
+@use 'base';
+
+// Import component-specific styles
+@use 'components/search';
+@use 'components/preview';
+@use 'components/controller';
+@use 'components/video-player';
+@use 'components/fader';
+@use 'components/credits';
+@use 'components/settings'; 

@@ -1,0 +1,57 @@
+@import '../variables';
+
+.preview {
+  &-thumbnail {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    background-color: $gray-dark;
+    border-radius: $border-radius-sm;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform $transition-fast, box-shadow $transition-fast;
+
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: $shadow-subtle;
+    }
+
+    &--selected {
+      box-shadow: 0 0 0 2px $accent-green;
+    }
+
+    &__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &__overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: $spacing-sm;
+      background: linear-gradient(to top, rgba($primary-bg, 0.8), transparent);
+      color: $text-primary;
+    }
+
+    &__title {
+      font-size: 0.875rem;
+      margin-bottom: $spacing-xs;
+    }
+
+    &__creator {
+      font-size: 0.75rem;
+      color: $text-secondary;
+    }
+  }
+
+  &-grid {
+    display: grid;
+    grid-template-columns: repeat($preview-grid-cols, 1fr);
+    grid-template-rows: repeat($preview-grid-rows, 1fr);
+    gap: $grid-gap;
+    margin: $spacing-md 0;
+  }
+} 
